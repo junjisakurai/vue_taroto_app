@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tarot Card App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="card-container" @mousemove="rotateCard">
+        <div class="card" :class="{flipped: flipped}" @click="flipCard">
+          <div class="card-front">
+            <img :src="card.image" :alt="card.name">
+            <h2>{{ card ? card.name : '' }}</h2>
+          </div>
+          <div class="card-back">
+            <p>{{ card ? card.meaning : '' }}</p>
+          </div>
+        </div>
+        <div class="card-cover" :class="{hidden: showCard}" @click="showRandomCard"></div>
+      </div>
+      <div class="button-container">
+        <button @click="showRandomCard()">Draw a Card</button>
+      </div>
+      <ul class="card-history">
+        <h2>history</h2>
+        <li v-for="(card, index) in history" :key="index">
+          <img :src="card.image" :alt="card.name">
+          <p>{{ card.name }}</p>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
