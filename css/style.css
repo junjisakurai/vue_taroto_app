@@ -14,7 +14,6 @@
 }
 
 .button-container {
-  margin-top: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,9 +46,16 @@
 }
 
 .card-back {
+  position: relative;
+  margin-left: 8px;
+}
+
+.card-text {
   position: absolute;
-  top: 107%;
-  display: block;
+  top: 25px;
+  left: 25px;
+  transform: scaleX(-1);
+  padding-left: 8px;
 }
 
 .card-front {
@@ -59,15 +65,21 @@
   backface-visibility: hidden;
 }
 
-
 .card.flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) !important;
 }
 
+.card.flipped .back-img {
+  opacity: 0.1;
+  width: 250px;
+  height: 450px;
+  transform: scaleX(-1);
+}
 
-.card img {
+.card .front-img {
   max-width: 100%;
   height: auto;
+  opacity: 1;
 }
 
 .card-history {

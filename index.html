@@ -10,11 +10,14 @@
       <div class="card-container" @mousemove="rotateCard">
         <div class="card" :class="{flipped: flipped}" @click="flipCard">
           <div class="card-front">
-            <img :src="card.image" :alt="card.name">
-            <h2>{{ card ? card.name : '' }}</h2>
+            <img class="front-img" :src="card.image" :alt="card.name">
           </div>
-          <div class="card-back">
-            <p>{{ card ? card.meaning : '' }}</p>
+          <div class="card-back" v-show="flipped">
+            <img class="back-img" :src="card.image" :alt="card.name">
+            <div class="card-text">
+              <h2>{{ card ? card.name : '' }}</h2>
+              <p>{{ card ? card.meaning : '' }}</p>
+            </div>
           </div>
         </div>
         <div class="card-cover" :class="{hidden: showCard}" @click="showRandomCard"></div>

@@ -62,19 +62,23 @@ mounted() {
       this.flipped = !this.flipped;
     },
 	rotateCard(event) {
-	  let card = event.currentTarget.querySelector('.card');
+	  let card_front = event.currentTarget.querySelector('.card-front');
+	  let card_back = event.currentTarget.querySelector('.card-back');
 	  let container = event.currentTarget;
 	  let windowX = window.innerWidth / 2;
 	  let windowY = window.innerHeight / 2;
 	  let rect = container.getBoundingClientRect();
 	  let mouseX = event.clientX - rect.left - rect.width / 2;
 	  let mouseY = event.clientY - rect.top - rect.height / 2;
-
+	  
+	  let transform_style = 0;
 	  if (mouseX > -rect.width / 2 && mouseX < rect.width / 2 && mouseY > -rect.height / 2 && mouseY < rect.height / 2) {
-	    card.style.transform = `rotateY(${-mouseX / 10}deg) rotateX(${mouseY / 10}deg)`;
+	    transform_style = `rotateY(${-mouseX / 10}deg) rotateX(${mouseY / 10}deg)`;
 	  } else {
-	    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+	    transform_style = `rotateY(0deg) rotateX(0deg)`;
 	  }
+	  card_front.style.transform = transform_style;
+	  card_back.style.transform = transform_style;
 	},
   },
 };
