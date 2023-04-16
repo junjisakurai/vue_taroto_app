@@ -1,5 +1,5 @@
 # vue_taroto_app
-vue3で作成したタロットカードを引くアプリ
+vue3で作成したタロットカードを引くアプリ　https://codepen.io/junjisakurai/pen/ExdKwKL
 </br></br>
 <div>
   <h2>概要</h2>
