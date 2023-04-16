@@ -1,6 +1,16 @@
 # vue_taroto_app
 vue3で作成したタロットカードを引くアプリ
 </br></br>
+
+https://user-images.githubusercontent.com/54252926/232280184-d67f07ae-ff8a-4aed-ac25-0fce55f8d790.mp4
+
+
+https://user-images.githubusercontent.com/54252926/232280186-dbdc7a77-42f8-4e2e-9871-c523e07d3a2d.mp4
+
+
+
+
+</br></br>
 【仕様】</br>
 </br>
 ■概要</br>
